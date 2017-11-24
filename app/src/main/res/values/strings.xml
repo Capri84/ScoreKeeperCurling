@@ -1,33 +1,3 @@
 <resources>
-<string name="app_name">Score Keeper</string>
-<string name="teama">Team A</string>
-<string name="scorea">0</string>
-<string name="one">+1</string>
-<string name="two">+2</string>
-<string name="three">+3</string>
-<string name="four">+4</string>
-<string name="five">+5</string>
-<string name="six">+6</string>
-<string name="seven">+7</string>
-<string name="eight">+8</string>
-<string name="teamb">Team B</string>
-<string name="scoreb">0</string>
-<string name="reset">Reset</string>
-<string name="end">End</string>
-<string name="column1">1</string>
-<string name="column2">2</string>
-<string name="column3">3</string>
-<string name="column4">4</string>
-<string name="column5">5</string>
-<string name="column6">6</string>
-<string name="column7">7</string>
-<string name="column8">8</string>
-<string name="column9">9</string>
-<string name="column10">10</string>
-<string name="total">Total</string>
-<string name="end_number">End №:</string>
-<string name="increment">+</string>
-<string name="decrement">-</string>
-<string name="end1">1</string>
-<string name="fixRes">Fix results</string>
+    <string name="app_name">Curling</string>
 </resources>

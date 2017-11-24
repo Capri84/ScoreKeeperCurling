@@ -1,382 +1,627 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context="com.example.android.scorekeeper.MainActivity">
+    android:fillViewport="true">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/end"
-            style="@style/padding"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/end_number" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/end"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
-
-            <Button
-                style="@style/buttons"
-                android:onClick="decrement"
-                android:text="@string/decrement" />
-
-            <TextView
-                android:id="@+id/end_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1" />
-
-            <Button
-                style="@style/buttons"
-                android:onClick="increment"
-                android:text="@string/increment" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/score_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/padding"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/teama" />
+                    android:gravity="center"
+                    android:hint="Team A"
+                    android:textSize="26sp" />
 
                 <TextView
-                    android:id="@+id/team_a_score"
-                    style="@style/padding1"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/score_team_a"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/scorea" />
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="120sp" />
 
-                <GridLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:columnCount="4"
-                    android:orientation="horizontal">
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusOneA"
-                        android:text="@string/one" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusTwoA"
-                        android:text="@string/two" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusThreeA"
-                        android:text="@string/three" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusFourA"
-                        android:text="@string/four" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusFiveA"
-                        android:text="@string/five" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusSixA"
-                        android:text="@string/six" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusSevenA"
-                        android:text="@string/seven" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusEightA"
-                        android:text="@string/eight" />
-                </GridLayout>
-
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="score"
+                    android:textSize="26sp" />
             </LinearLayout>
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:background="@android:color/darker_gray" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/padding"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/teamb" />
+                    android:gravity="center"
+                    android:hint="Team B"
+                    android:textSize="26sp" />
 
                 <TextView
-                    android:id="@+id/team_b_score"
-                    style="@style/padding1"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/score_team_b"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/scoreb" />
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="120sp" />
 
-                <GridLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:columnCount="4"
-                    android:orientation="horizontal">
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusOneB"
-                        android:text="@string/one" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusTwoB"
-                        android:text="@string/two" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusThreeB"
-                        android:text="@string/three" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusFourB"
-                        android:text="@string/four" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusFiveB"
-                        android:text="@string/five" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusSixB"
-                        android:text="@string/six" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusSevenB"
-                        android:text="@string/seven" />
-
-                    <Button
-                        style="@style/buttons"
-                        android:onClick="plusEightB"
-                        android:text="@string/eight" />
-                </GridLayout>
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="score"
+                    android:textSize="26sp" />
             </LinearLayout>
+
         </LinearLayout>
 
-        <GridLayout
-            style="@style/margin2"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/score_count"
-            android:layout_gravity="center"
-            android:columnCount="12"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/table"
-                android:text="@string/end" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column1" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column2" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column3" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column4" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column5" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column6" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column7" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column8" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column9" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/column10" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/total" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/teama" />
-
-            <TextView
-                android:id="@+id/scorea"
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scorea" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/teamb" />
-
-            <TextView
-                android:id="@+id/scoreb"
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-
-            <TextView
-                style="@style/table"
-                android:text="@string/scoreb" />
-        </GridLayout>
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="Team A"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="Total"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:rotation="-90"
+                android:text="end"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/one_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/two_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/three_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/four_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/five_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/six_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/seven_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/eight_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/nine_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/ten_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/extra_end_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#F44336"
+                android:textSize="26sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/total_a"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textSize="36sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <Button
+                android:id="@+id/button_plus_1a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+1" />
+
+            <Button
+                android:id="@+id/button_plus_2a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+2" />
+
+            <Button
+                android:id="@+id/button_plus_3a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+3" />
+
+            <Button
+                android:id="@+id/button_plus_4a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+4" />
+
+            <Button
+                android:id="@+id/button_plus_5a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+5" />
+
+            <Button
+                android:id="@+id/button_plus_6a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+6" />
+
+            <Button
+                android:id="@+id/button_plus_7a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+7" />
+
+            <Button
+                android:id="@+id/button_plus_8a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+8" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="Team B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="Total"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:rotation="-90"
+                android:text="end"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/one_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/two_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/three_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/four_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/five_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/six_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/seven_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/eight_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/nine_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/ten_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/extra_end_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#F44336"
+                android:textSize="26sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/total_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textSize="36sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <Button
+                android:id="@+id/button_plus_1b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+1" />
+
+            <Button
+                android:id="@+id/button_plus_2b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+2" />
+
+            <Button
+                android:id="@+id/button_plus_3b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+3" />
+
+            <Button
+                android:id="@+id/button_plus_4b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+4" />
+
+            <Button
+                android:id="@+id/button_plus_5b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+5" />
+
+            <Button
+                android:id="@+id/button_plus_6b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+6" />
+
+            <Button
+                android:id="@+id/button_plus_7b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+7" />
+
+            <Button
+                android:id="@+id/button_plus_8b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="+8" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <Button
-                style="@style/margin1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:onClick="results"
-                android:text="@string/fixRes" />
+                android:id="@+id/button_next_end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="next end" />
 
             <Button
-                style="@style/margin1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:onClick="reset"
-                android:text="@string/reset" />
+                android:id="@+id/button_reset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="reset" />
         </LinearLayout>
-    </RelativeLayout>
+
+    </LinearLayout>
+
 </ScrollView>
